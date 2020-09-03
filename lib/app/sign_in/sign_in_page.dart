@@ -6,8 +6,13 @@ import 'social_sign_button.dart';
 
 class SignInPage extends StatelessWidget {
   void _signInAnonymous() async {
-    var authResult = await FirebaseAuth.instance.signInAnonymously();
-    print('${authResult.user.uid}');
+    try{
+      var authResult = await FirebaseAuth.instance.signInAnonymously();
+      print('${authResult.user.uid}');
+    } catch(e){
+      print(e.toString());
+    }
+
   }
 
   @override
