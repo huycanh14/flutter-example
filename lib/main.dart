@@ -1,4 +1,4 @@
-import 'package:app_time_tracker/app/sign_in/sign_in_page.dart';
+import 'package:app_time_tracker/app/landing_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: SignInPage()
+      home: LandingPage()
     );
   }
 }
