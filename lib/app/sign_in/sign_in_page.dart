@@ -5,10 +5,15 @@ import 'package:flutter/material.dart';
 import 'social_sign_button.dart';
 
 class SignInPage extends StatelessWidget {
+  SignInPage({@required this.onSignIn});
+
+  final Function(User) onSignIn;
+
+
   void _signInAnonymous() async {
     try{
       var authResult = await FirebaseAuth.instance.signInAnonymously();
-      print('${authResult.user.uid}');
+      onSignIn(authResult.user);
     } catch(e){
       print(e.toString());
     }
