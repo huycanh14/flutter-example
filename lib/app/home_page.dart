@@ -5,10 +5,11 @@ class HomePage extends StatelessWidget {
   final VoidCallback onSignOut;
 
   HomePage({@required this.onSignOut});
-  
+
   Future<void> _signOut() async {
     try{
       await FirebaseAuth.instance.signOut();
+      onSignOut();
     } catch(e){
       print(e.toString());
     }
