@@ -1,3 +1,4 @@
+import 'package:app_time_tracker/app/home_page.dart';
 import 'package:app_time_tracker/app/sign_in/sign_in_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,6 @@ class _LandingPageState extends State<LandingPage> {
       return SignInPage(
         onSignIn: (user) => _updateUser(user),
       );
-    return Container(); // temporary placeholder for HomePage
+    return HomePage(); // temporary placeholder for HomePage
   }
 }
