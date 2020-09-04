@@ -15,7 +15,14 @@ class SignInPage extends StatelessWidget {
     } catch(e){
       print(e.toString());
     }
+  }
 
+  Future<void> _signInWithGoogle() async {
+    try{
+      await auth.signInWithGoogle();
+    } catch(e){
+      print(e.toString());
+    }
   }
 
   @override
@@ -49,7 +56,7 @@ class SignInPage extends StatelessWidget {
             text: 'Sign in with Google',
             color: Colors.white,
             textColor: Colors.black87,
-            onPress: () {},
+            onPress: _signInWithGoogle,
           ),
           SizedBox(height: 8.0),
           SocialSignButton(
