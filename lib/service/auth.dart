@@ -21,7 +21,7 @@ class Auth implements AuthBase {
   }
 
   Stream<Account> get onAuthStateChange{
-    return _firebaseAuth.authStateChanges().asyncMap(_userFromFirebase);
+    return _firebaseAuth.authStateChanges().asyncMap((firebaseUser) => _userFromFirebase(firebaseUser));
   }
 
   @override
