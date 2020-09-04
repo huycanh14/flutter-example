@@ -20,6 +20,10 @@ class Auth implements AuthBase {
     return Account(uid: user.uid);
   }
 
+  Stream<Account> get onAuthStateChange{
+    return _firebaseAuth.authStateChanges().asyncMap(_userFromFirebase);
+  }
+
   @override
   Future<Account> currentUser() async {
     final user = _firebaseAuth.currentUser;
